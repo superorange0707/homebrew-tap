@@ -1,0 +1,28 @@
+name: Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install-and-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Tap this checkout
+        run: |
+          brew tap superorange0707/tap "$GITHUB_WORKSPACE"
+          brew trust superorange0707/tap
+      - name: Install formula
+        run: brew install project-brain
+      - name: Test installed command
+        run: |
+          brew test project-brain
+          brain --version
