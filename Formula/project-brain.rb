@@ -3,8 +3,8 @@ class ProjectBrain < Formula
 
   desc "Give any chat AI read-only, multi-repository codebase exploration"
   homepage "https://github.com/superorange0707/project-brain"
-  url "https://github.com/superorange0707/project-brain/releases/download/v0.1.1/project_brain_context-0.1.1.tar.gz"
-  sha256 "11f6e32a34cda683a0a3b800c94561a8d0f6820d62d4ee89038ffea3aeafc48d"
+  url "https://github.com/superorange0707/project-brain/releases/download/v0.1.2/project_brain_context-0.1.2.tar.gz"
+  sha256 "52b895a54c9c484147310f2e9abc53bd4adb6d6c335bc8148fcbdce74cced352"
   license "MIT"
 
   depends_on "python@3.14"
@@ -14,6 +14,6 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain 0.1.1", shell_output("#{bin}/brain --version")
+    assert_match "brain 0.1.2", shell_output("#{bin}/brain --version")
   end
 end
