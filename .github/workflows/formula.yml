@@ -24,8 +24,8 @@ jobs:
         run: |
           brew tap superorange0707/tap "$GITHUB_WORKSPACE"
           brew trust --formula superorange0707/tap/project-brain
-      - name: Install formula without local compilation
-        run: brew install --build-from-source project-brain
+      - name: Install formula for bottle packaging
+        run: brew install --build-bottle project-brain
       - name: Test installed command
         run: |
           brew test project-brain
