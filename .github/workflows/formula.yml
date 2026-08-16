@@ -1,4 +1,4 @@
-name: Formula
+name: Cask
 
 on:
   push:
@@ -20,9 +20,9 @@ jobs:
         run: |
           brew tap superorange0707/tap "$GITHUB_WORKSPACE"
           brew trust superorange0707/tap
-      - name: Install formula
-        run: brew install project-brain
+      - name: Install cask
+        run: brew install --cask project-brain
       - name: Test installed command
         run: |
-          brew test project-brain
           brain --version
+          codebase-memory-mcp --version
