@@ -4,6 +4,13 @@ class ProjectBrain < Formula
   version "0.4.1"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/superorange0707/homebrew-tap/releases/download/project-brain-0.4.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "25b94bfa3c338fb7400ab68f2115d627504f1ed9e31246864d62a2033529a392"
+    sha256 cellar: :any_skip_relocation, sequoia:      "61e269b9d8083651553553e0c2864a692ef4c801a46c0e8028089ee3777c0896"
+  end
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/superorange0707/project-brain/releases/download/v0.4.1/project-brain-v0.4.1-macos-arm64.tar.gz"
