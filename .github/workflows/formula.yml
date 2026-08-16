@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  install-and-test:
+  bottle:
     strategy:
       fail-fast: false
       matrix:
@@ -24,10 +24,18 @@ jobs:
         run: |
           brew tap superorange0707/tap "$GITHUB_WORKSPACE"
           brew trust --formula superorange0707/tap/project-brain
-      - name: Install prebuilt bottle
-        run: brew install project-brain
+      - name: Install formula for bottle packaging
+        run: brew install --build-bottle project-brain
       - name: Test installed command
         run: |
           brew test project-brain
           brain --version
           codebase-memory-mcp --version
+      - name: Build Homebrew bottle
+        run: brew bottle --json --root-url="https://github.com/superorange0707/homebrew-tap/releases/download/project-brain-0.3.2" project-brain
+      - uses: actions/upload-artifact@v7
+        with:
+          name: bottle-${{ matrix.os }}
+          path: |
+            *.bottle.*
+          if-no-files-found: error
