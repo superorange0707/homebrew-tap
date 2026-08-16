@@ -1,4 +1,4 @@
-name: Cask
+name: Formula
 
 on:
   push:
@@ -10,8 +10,12 @@ permissions:
   contents: read
 
 jobs:
-  install-and-test:
-    runs-on: macos-latest
+  bottle:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -19,10 +23,19 @@ jobs:
       - name: Tap this checkout
         run: |
           brew tap superorange0707/tap "$GITHUB_WORKSPACE"
-          brew trust superorange0707/tap
-      - name: Install cask
-        run: brew install --cask project-brain
+          brew trust --formula superorange0707/tap/project-brain
+      - name: Install formula without local compilation
+        run: brew install --build-from-source project-brain
       - name: Test installed command
         run: |
+          brew test project-brain
           brain --version
           codebase-memory-mcp --version
+      - name: Build Homebrew bottle
+        run: brew bottle --json --root-url="https://github.com/superorange0707/homebrew-tap/releases/download/project-brain-0.2.0" project-brain
+      - uses: actions/upload-artifact@v7
+        with:
+          name: bottle-${{ matrix.os }}
+          path: |
+            *.bottle.*
+          if-no-files-found: error
