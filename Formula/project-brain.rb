@@ -1,34 +1,26 @@
 class ProjectBrain < Formula
   desc "Give any chat AI read-only, multi-repository codebase exploration"
   homepage "https://github.com/superorange0707/project-brain"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/superorange0707/homebrew-tap/releases/download/project-brain-0.2.0"
-    rebuild 1
-    sha256 cellar:       :any_skip_relocation,
-           arm64_sonoma: "5065b3e7662b1172572699833709a07bb4e2c4746f7061ccb339b3f01585edb4",
-           sequoia:      "563f00f3d31e74b25833669395be714fd769c1a30a510c2550df12678a37fcf0"
-  end
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.0/project-brain-v0.2.0-macos-arm64.tar.gz"
-      sha256 "f18a44d936160742b8756b6763cd46800fb20c8dae7a392458fd43ce25071022"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.1/project-brain-v0.2.1-macos-arm64.tar.gz"
+      sha256 "d60e5e34087cc18cc33505fc6912fa9fd2f6e81fce57dcb02b15fc20fc1c20a8"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.0/project-brain-v0.2.0-macos-amd64.tar.gz"
-      sha256 "a17ae93ba8f13a521337191aaefc5d26593e2dc02038f6d653d319a3e1068944"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.1/project-brain-v0.2.1-macos-amd64.tar.gz"
+      sha256 "3c9c8a3f341a43a7910c7fdc67887bebd13f7af15338110011679084b201bd89"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.0/project-brain-v0.2.0-linux-arm64.tar.gz"
-      sha256 "8cd4fede0d83ead8a11ba7a61dd53e714b98d724b52f69803e1f213e0661ff8a"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.1/project-brain-v0.2.1-linux-arm64.tar.gz"
+      sha256 "43dca13afdd0015cb2a30df623f074cf798ecf33f406f1ea511078796b970732"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.0/project-brain-v0.2.0-linux-amd64.tar.gz"
-      sha256 "e5817ab1096656b12011ff12f1790f3cfba65405285153f6841c062eb847ccf4"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.2.1/project-brain-v0.2.1-linux-amd64.tar.gz"
+      sha256 "77565b684924808f0df1701802dce453bff36ef1ca4e3754124b601ff1a197b7"
     end
   end
 
@@ -38,7 +30,7 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain 0.2.0", shell_output("#{bin}/brain --version")
+    assert_match "brain 0.2.1", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
   end
 end
