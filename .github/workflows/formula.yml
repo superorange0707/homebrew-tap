@@ -31,3 +31,5 @@ jobs:
           brew test project-brain
           brain --version
           codebase-memory-mcp --version
+          test -x "$(command -v zoekt)"
+          zoekt-index -h >/dev/null
