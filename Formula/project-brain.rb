@@ -5,21 +5,21 @@ class ProjectBrain < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.3/project-brain-v0.6.3-macos-arm64.tar.gz"
-      sha256 "cc3ef6bfc8ff076dd9cb41e46ea34c17372feb569313a8b71eca1a0b1fe6af95"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.4/project-brain-v0.6.4-macos-arm64.tar.gz"
+      sha256 "b1d50321ff81bbdb4d478ce377ac103487b63fc283a4d83e4f8bf572d73fac47"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.3/project-brain-v0.6.3-macos-amd64.tar.gz"
-      sha256 "c89bdf1d3f70a53255038c76a35ebbe1d06e3bfb02a8a5f8cb9c543b17cbe01a"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.4/project-brain-v0.6.4-macos-amd64.tar.gz"
+      sha256 "05a3fcb1ad98a3d70e447e522d7c258338f03f9c202743c6d3522922b3b6bbf7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.3/project-brain-v0.6.3-linux-arm64.tar.gz"
-      sha256 "a6f901e09d4cc0fa65758695f88853ac3c74f481401f363aa91e6f265daec32f"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.4/project-brain-v0.6.4-linux-arm64.tar.gz"
+      sha256 "be79b9621347b47946a5adb967d41a0580f42dbb65f3a0e6984aec35e6342480"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.3/project-brain-v0.6.3-linux-amd64.tar.gz"
-      sha256 "c876671300491e20cb7f494031f0a479d1fc75e159193ed2f8618787c19eabe7"
+      url "https://github.com/superorange0707/project-brain/releases/download/v0.6.4/project-brain-v0.6.4-linux-amd64.tar.gz"
+      sha256 "0df4f4ae408a7ece69d6927ef593160aff28cc10a5be7efe04ca076c54a3c0ed"
     end
   end
 
@@ -30,7 +30,7 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain 0.6.3", shell_output("#{bin}/brain --version")
+    assert_match "brain 0.6.4", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
     assert_predicate bin/"zoekt", :executable?
     assert_predicate bin/"zoekt-index", :executable?
