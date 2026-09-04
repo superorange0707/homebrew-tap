@@ -3,11 +3,10 @@ class ProjectBrain < Formula
   homepage "https://github.com/superorange0707/project-brain"
   license "MIT"
 
-
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.7/project-brain-v1.0.7-macos-arm64.tar.gz"
-      sha256 "2450397d78ca417c83b4d0b119a9ac188c22ec363c463825d1472abcd7c99cda"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.9/project-brain-v1.0.9-macos-arm64.tar.gz"
+      sha256 "263717da832b84cde47ba3062934c98db92ce2d9bd760d9184cd97c9d3be09d7"
     else
       url "https://github.com/superorange0707/project-brain/releases/download/v1.0.7/project-brain-v1.0.7-macos-amd64.tar.gz"
       sha256 "fff81a2450e74bf6ea6f7bed1c5276bb9267fefedaa17129ba732fdafc3baa14"
@@ -31,7 +30,8 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain 1.0.7", shell_output("#{bin}/brain --version")
+    expected_version = (OS.mac? && Hardware::CPU.arm?) ? "1.0.9" : "1.0.7"
+    assert_match "brain #{expected_version}", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
     assert_predicate bin/"zoekt", :executable?
     assert_predicate bin/"zoekt-index", :executable?
