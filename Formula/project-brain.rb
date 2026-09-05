@@ -3,23 +3,24 @@ class ProjectBrain < Formula
   homepage "https://github.com/superorange0707/project-brain"
   license "MIT"
 
+
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.9/project-brain-v1.0.9-macos-arm64.tar.gz"
-      sha256 "263717da832b84cde47ba3062934c98db92ce2d9bd760d9184cd97c9d3be09d7"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.11/project-brain-v1.0.11-macos-arm64.tar.gz"
+      sha256 "66c1c4a5d085b90007e0ac5f1fcf9ffaaaed1b5abdb14e063945306a97140e46"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.7/project-brain-v1.0.7-macos-amd64.tar.gz"
-      sha256 "fff81a2450e74bf6ea6f7bed1c5276bb9267fefedaa17129ba732fdafc3baa14"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.11/project-brain-v1.0.11-macos-amd64.tar.gz"
+      sha256 "79d65312a3d7a9194a7307c0611490612556b600d46a9c1bc7bd1fd0a3b45958"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.7/project-brain-v1.0.7-linux-arm64.tar.gz"
-      sha256 "de831bacfe1c25830a159abbdfecb9a6b911092844e8da8c1502e9ec2ad900ea"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.11/project-brain-v1.0.11-linux-arm64.tar.gz"
+      sha256 "9af54e04dc6db9b8c64a9a21f41bb6b91f1a74e4d2ebbc0f5470929b506d1266"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.7/project-brain-v1.0.7-linux-amd64.tar.gz"
-      sha256 "258464c8f260933a370661a66bdaaf287eda1ca7a068911e0a93473bff96ed10"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.11/project-brain-v1.0.11-linux-amd64.tar.gz"
+      sha256 "558e8872981e38a9f9118f984ce98f33a03cdccb28608b9d09e8b53957688fca"
     end
   end
 
@@ -30,8 +31,7 @@ class ProjectBrain < Formula
   end
 
   test do
-    expected_version = (OS.mac? && Hardware::CPU.arm?) ? "1.0.9" : "1.0.7"
-    assert_match "brain #{expected_version}", shell_output("#{bin}/brain --version")
+    assert_match "brain 1.0.11", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
     assert_predicate bin/"zoekt", :executable?
     assert_predicate bin/"zoekt-index", :executable?
