@@ -16,11 +16,11 @@ class ProjectBrain < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.12/project-brain-v1.0.12-linux-arm64.tar.gz"
-      sha256 "88f59b1058ded03c0bc2c41371955a4eb053e73be9b187ffb8d1462dcfc9f42d"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.14/project-brain-v1.0.14-linux-arm64.tar.gz"
+      sha256 "d3880baf4d662490676f3d2439dd0908a7cd5670bef082c910ca03070b67672b"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.12/project-brain-v1.0.12-linux-amd64.tar.gz"
-      sha256 "64821ca35e2f750c9cf1abcf32813d90d5e7ca0318c51cb65f76e0199035317b"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.14/project-brain-v1.0.14-linux-amd64.tar.gz"
+      sha256 "3fc1601de8741fd45ba40021b33602f3ffbf56ccad84408bf2a034df52457b00"
     end
   end
 
