@@ -6,11 +6,11 @@ class ProjectBrain < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.12/project-brain-v1.0.12-macos-arm64.tar.gz"
-      sha256 "9b43db15f321a839142294ed841ef4a468d14d57080880b6805a3e6e62f59e61"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.14/project-brain-v1.0.14-macos-arm64.tar.gz"
+      sha256 "5bab0202cc6fa4455627c918efe6fb35b1554b8564cb4fe17a527b7047f4d262"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.12/project-brain-v1.0.12-macos-amd64.tar.gz"
-      sha256 "b8c9daf49db473d6f3942efa54de561de77fde7be5d9ff0f67be18ed5479f67a"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.14/project-brain-v1.0.14-macos-amd64.tar.gz"
+      sha256 "5df25256fcb3ef6c795a59a33a62e4d9fd347a96d2255a185b0832f1aac92147"
     end
   end
 
@@ -31,7 +31,7 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain 1.0.12", shell_output("#{bin}/brain --version")
+    assert_match "brain #{version}", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
     assert_predicate bin/"zoekt", :executable?
     assert_predicate bin/"zoekt-index", :executable?
