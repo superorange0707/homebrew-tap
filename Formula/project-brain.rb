@@ -16,11 +16,11 @@ class ProjectBrain < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.25/project-brain-v1.0.25-linux-arm64.tar.gz"
-      sha256 "9106252e7128b146a688a10ac61a053c31aaf699710ce31d6059dfb4640e341f"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.27/project-brain-v1.0.27-linux-arm64.tar.gz"
+      sha256 "ffa3ae20d645cc49bad05e6b142737073022aaad11c3965f6c640ab19cca4b13"
     else
-      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.25/project-brain-v1.0.25-linux-amd64.tar.gz"
-      sha256 "ffadba7744b8379817f26ae350368525780d4f050abd5b0ed332ebc3bb564e13"
+      url "https://github.com/superorange0707/project-brain/releases/download/v1.0.27/project-brain-v1.0.27-linux-amd64.tar.gz"
+      sha256 "76206e62ccb6d4b7c54f7076a44580d044c8e68e849d35280e2e3627742bceb5"
     end
   end
 
@@ -31,7 +31,7 @@ class ProjectBrain < Formula
   end
 
   test do
-    assert_match "brain #{version}", shell_output("#{bin}/brain --version")
+    assert_match "brain 1.0.27", shell_output("#{bin}/brain --version")
     assert_match "0.10.5", shell_output("#{bin}/codebase-memory-mcp --version 2>&1")
     assert_predicate bin/"zoekt", :executable?
     assert_predicate bin/"zoekt-index", :executable?
