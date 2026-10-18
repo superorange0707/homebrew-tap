@@ -6,7 +6,14 @@ Install [Project Brain](https://github.com/superorange0707/project-brain):
 brew install superorange0707/tap/project-brain
 ```
 
-Upgrade an existing installation with Homebrew's normal update path:
+Upgrade an existing installation from your Project Brain workspace (1.0.36 and
+later delegate to Homebrew and restart the local UI for you):
+
+```bash
+brain upgrade
+```
+
+Or use Homebrew's normal update path:
 
 ```bash
 brew update
