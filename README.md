@@ -1,4 +1,6 @@
-# Homebrew tap for Project Brain
+# superorange0707's Homebrew tap
+
+## Project Brain
 
 Install [Project Brain](https://github.com/superorange0707/project-brain):
 
@@ -35,3 +37,21 @@ SHA-256. Project Brain is read-only by default and needs no API key.
 
 Project Brain's release automation updates this formula only after the matching
 GitHub Release has successfully published its final artifacts and `SHA256SUMS`.
+
+## msgforge
+
+Install [msgforge](https://github.com/superorange0707/msgforge), a message simulator for IBM MQ, Kafka, RabbitMQ, MQTT, AMQP 1.0, Amazon SQS, NATS and HTTP:
+
+```bash
+brew install superorange0707/tap/msgforge
+```
+
+Then start the console and open http://localhost:8585:
+
+```bash
+msgforge
+```
+
+or keep it running in the background with `brew services start msgforge`. A pipeline runs a saved scenario with `msgforge run <scenario> --report msgforge.xml`; it exits 0 when it passes.
+
+The formula builds msgforge from its release source on your machine, with OpenJDK 17 from Homebrew; the build fetches its libraries from Maven Central. Connections, scenarios and packs are kept in `$(brew --prefix)/var/msgforge` (or `MSGFORGE_HOME`), so upgrades keep them.
