@@ -1,8 +1,8 @@
 class Msgforge < Formula
   desc "Message simulator for IBM MQ, Kafka, RabbitMQ, MQTT, AMQP, SQS, NATS and HTTP"
   homepage "https://github.com/superorange0707/msgforge"
-  url "https://github.com/superorange0707/msgforge/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "54628ad60a5b92c28a7b3dd4fbf4020b6b64014ef4ac9ca4c5ae2fe238d52fee"
+  url "https://github.com/superorange0707/msgforge/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "efc6b1b1c3c0d085b8e65fe0df8290a3182b1d18dc742455ba8cf6b035868af5"
   license "Apache-2.0"
 
   depends_on "openjdk@17"
